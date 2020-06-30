@@ -1,4 +1,4 @@
-from sites import QualityZone, config
+import QualityZone, config
 import os
 import tempfile
 import pecos
@@ -8,7 +8,6 @@ import plotly.io
 import webbrowser
 import click
 from plotly.subplots import make_subplots
-
 
 
 print("Starting QualityZone")

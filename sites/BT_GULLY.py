@@ -1,13 +1,13 @@
-from sites import QualityZone
+import QualityZone, config
 import os
 import tempfile
 import pecos
 import matplotlib.pyplot as plt
-
-import plotly.graph_objects as go
-from plotly import tools
+import plotly.graph_objs as go
+import plotly.io
 import webbrowser
 import click
+from plotly.subplots import make_subplots
 
 print("Starting QualityZone")
 print("Checking Dropbox API")
