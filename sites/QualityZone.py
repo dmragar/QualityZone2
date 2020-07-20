@@ -173,8 +173,10 @@ def concat_dat(dat_path, start_date=None):
         index_col=0,
         na_values='NAN')
         for f in glob.glob(os.path.join(dat_path + '/*.dat'))], sort=False)
-    df.drop_duplicates(inplace=True)
+
     df.index = pd.to_datetime(df.index)
+    # index based duplicate search
+    df = df.loc[~df.index.duplicated(keep='first')]
     df = df.sort_index(ascending=True)
     if start_date is not None:
         df = df.truncate(before=pd.Timestamp(start_date))
