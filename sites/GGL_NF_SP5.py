@@ -108,7 +108,7 @@ df = df_updated.copy()
 pm.add_dataframe(df)
 pm.check_timestamp(600)
 pm.check_missing(min_failures=1)
-pm.check_corrupt([-7999, 'NAN'])
+pm.check_corrupt([-7999, 7999, -6999, 6999, 'NAN'])
 pm.check_range([12, 15.1], 'Battery Voltage, DC Volts')
 
 mask = pm.get_test_results_mask()

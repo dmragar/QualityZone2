@@ -146,7 +146,7 @@ df = df_updated.copy()
 pm.add_dataframe(df)
 pm.check_timestamp(600)
 pm.check_missing(min_failures=1)
-pm.check_corrupt([-7999, 'NAN'])
+pm.check_corrupt([-7999, -6999, 'NAN'])
 pm.check_range([12, 15.1], 'Battv_min')
 
 
@@ -200,13 +200,19 @@ trace2 = go.Scattergl(
     name='Battv min',
 )
 
-fig = tools.make_subplots(rows=2, cols=1, specs=[[{}], [{}]],
+fig = make_subplots(rows=2, cols=1, specs=[[{}], [{}]],
                           shared_xaxes=True,
                           vertical_spacing=0.001)
-fig.append_trace(trace1, 1, 1)
-fig.append_trace(trace2, 2, 1)
+fig.add_trace(trace1, 1, 1)
+fig.add_trace(trace2, 2, 1)
 
-plot_url = py.plot(fig, filename='B1_Met_Depth_Battv')
+#plot_url = py.plot(fig, filename='B1_Met_Depth_Battv')
+plotly.io.write_html(
+    fig,
+    file=os.path.join(
+        config.dropbox_local + '/CZO/BcCZO/Data/B1/B1_Met/B1_Met_QAQC/B1_Met_QC/B1_Met_Plots/1.html'),
+    auto_open=True
+    )
 
 
 trace3 = go.Scattergl(
@@ -240,20 +246,25 @@ trace7 = go.Scattergl(
     name='Soil VWC',
 )
 
-fig2 = tools.make_subplots(rows=3, cols=1, specs=[[{}], [{}], [{}]],
+fig2 = make_subplots(rows=3, cols=1, specs=[[{}], [{}], [{}]],
                           shared_xaxes=True,
                           vertical_spacing=0.001)
-fig2.append_trace(trace3, 2, 1)
-fig2.append_trace(trace4, 1, 1)
-fig2.append_trace(trace5, 3, 1)
-fig2.append_trace(trace6, 1, 1)
-fig2.append_trace(trace7, 3, 1)
+fig2.add_trace(trace3, 2, 1)
+fig2.add_trace(trace4, 1, 1)
+fig2.add_trace(trace5, 3, 1)
+fig2.add_trace(trace6, 1, 1)
+fig2.add_trace(trace7, 3, 1)
 
 
 #fig['layout'].update(height=600, width=600, title='Stacked Subplots with Shared X-Axes')
 
-plot_url = py.plot(fig2, filename='B1_Met_Soil')
-
+#plot_url = py.plot(fig2, filename='B1_Met_Soil')
+plotly.io.write_html(
+    fig2,
+    file=os.path.join(
+        config.dropbox_local + '/CZO/BcCZO/Data/B1/B1_Met/B1_Met_QAQC/B1_Met_QC/B1_Met_Plots/2.html'),
+    auto_open=True
+    )
 
 
 trace8 = go.Scattergl(
@@ -282,19 +293,24 @@ trace11 = go.Scattergl(
 )
 
 
-fig3 = tools.make_subplots(rows=2, cols=1, specs=[[{}], [{}]],
+fig3 = make_subplots(rows=2, cols=1, specs=[[{}], [{}]],
                           shared_xaxes=True,
                           vertical_spacing=0.001)
-fig3.append_trace(trace8, 2, 1)
-fig3.append_trace(trace9, 1, 1)
-fig3.append_trace(trace10, 1, 1)
-fig3.append_trace(trace11, 1, 1)
+fig3.add_trace(trace8, 2, 1)
+fig3.add_trace(trace9, 1, 1)
+fig3.add_trace(trace10, 1, 1)
+fig3.add_trace(trace11, 1, 1)
 
 
 #fig['layout'].update(height=600, width=600, title='Stacked Subplots with Shared X-Axes')
 
-plot_url = py.plot(fig3, filename='B1_Met_Wind')
-
+#plot_url = py.plot(fig3, filename='B1_Met_Wind')
+plotly.io.write_html(
+    fig3,
+    file=os.path.join(
+        config.dropbox_local + '/CZO/BcCZO/Data/B1/B1_Met/B1_Met_QAQC/B1_Met_QC/B1_Met_Plots/3.html'),
+    auto_open=True
+    )
 
 
 trace12 = go.Scattergl(
@@ -334,20 +350,25 @@ trace17 = go.Scattergl(
     name='RH %',
 )
 
-fig4 = tools.make_subplots(rows=3, cols=1, specs=[[{}], [{}], [{}]],
+fig4 = make_subplots(rows=3, cols=1, specs=[[{}], [{}], [{}]],
                           shared_xaxes=True,
                           vertical_spacing=0.001)
-fig4.append_trace(trace1, 1, 1)
-fig4.append_trace(trace2, 1, 1)
-fig4.append_trace(trace3, 2, 1)
-fig4.append_trace(trace4, 2, 1)
-fig4.append_trace(trace5, 2, 1)
-fig4.append_trace(trace6, 3, 1)
+fig4.add_trace(trace1, 1, 1)
+fig4.add_trace(trace2, 1, 1)
+fig4.add_trace(trace3, 2, 1)
+fig4.add_trace(trace4, 2, 1)
+fig4.add_trace(trace5, 2, 1)
+fig4.add_trace(trace6, 3, 1)
 
 
 
-plot_url = py.plot(fig4, filename='B1_Met_AirT_Radiaiton')
-
+#plot_url = py.plot(fig4, filename='B1_Met_AirT_Radiaiton')
+plotly.io.write_html(
+    fig4,
+    file=os.path.join(
+        config.dropbox_local + '/CZO/BcCZO/Data/B1/B1_Met/B1_Met_QAQC/B1_Met_QC/B1_Met_Plots/4.html'),
+    auto_open=True
+    )
 
 
 

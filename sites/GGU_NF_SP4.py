@@ -60,7 +60,7 @@ def format_for_dist(dataframe):
         '100cm depth, Temperature, deg C':"TEMP(C)-100cm",
         '138cm depth, Temperature, deg C':"TEMP(C)-138cm",
         '5cm depth, Volumetric Water Content, fraction':"Vol Water Content-5cm",
-        '50cm depth, CS616 period average, u sec':"Vol Water Content-50cm",
+        '50cm depth, Volumetric Water Content, fraction':"Vol Water Content-50cm",
         '100cm depth, Volumetric Water Content, fraction':"Vol Water Content-100cm",
         '138cm depth, Volumetric Water Content, fraction':"Vol Water Content-138cm"
 

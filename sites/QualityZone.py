@@ -184,6 +184,7 @@ def concat_dat(dat_path, start_date=None):
     return df
 
 
+
 def drop_dup(df):
     """
     Alternative to Pandas drop_duplicates command, which ignores df index. This func only checks the index.

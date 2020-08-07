@@ -12,7 +12,7 @@ print("Checking Dropbox API")
 system_name = 'GL4_MET'
 dropbox_base = '/CZO/BcCZO'
 master_file = '/Data/GLV/GL4_Met/GL4_Met_Master_Meta/Gl4_Met_Master_WY2019.csv'
-distribute_file = '/Data/GordonG'
+distribute_file = '/Data/GLV/GL4_Met/GL4_Met_Master_Meta/GL4_Met_Distribute_WY2019.csv'
 raw_folder = os.path.join(dropbox_base + '/ToughBook_Share/GLV/GL4_Met/raw_data/')
 master_path = os.path.join(dropbox_base + master_file)
 #new_path = os.path.join(dropbox_base + new_file)
